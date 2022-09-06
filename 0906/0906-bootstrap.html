@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap study</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="0906-bootstrap.css" rel="stylesheet">
+    <!--jquery library : Head에 정의하지 않으면 에러가 발생할 수 있다.-->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>    
+    <!--bootstrap library-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </head>
+  <body class="dark">
+    <div>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand">JSShop</span>
+                <span class="badge bg-dark">Dark 🔄</span>
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <form action="success.html">
+                <div class="my-3">
+                  <input type="text" class="form-control" id="uid">
+                 </div>
+                 <div class="my-3">
+                   <input type="password" class="form-control" id="upw">
+                 </div>
+                 <!--로그인 제출 버튼 type은 반드시 'submit'으로 만든다. -->
+                 <button type="submit" class="btn btn-primary" id="send">전송</button>
+                 <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form> 
+        </div>
+    </div> 
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand">Navbar</span>
+        <button onclick="" class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+    <div main-bg>
+        <h4>Shirts on Scale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+    </div>
+
+    <script>
+        var count = 0;
+
+        $('.badge').on('click', function(){
+            count++;
+            if (count % 2 == 1){
+                $('.badge').html("Light 🔄");
+            } else {
+                $('.badge').html("Dark 🔄");
+            }
+        })
+
+        $('#login').on('click', function(){
+            $('.black-bg').addClass('show-modal');
+        });
+
+        $('#close').on('click', function(){
+            $('.black-bg').removeClass('show-modal');
+        });
+
+        $('.navbar-toggler').on('click', function(){
+            $('.list-group')[0].classList.toggle('show');
+        })
+        // if (조건){
+        //     실행할코드
+        // }
+
+        $('form').on('submit', function(e){
+            if (document.getElementById('uid').value == ''){
+                alert('ID를 입력하세요.')
+                e.preventDefault()
+            } else if (document.getElementById('upw').value.length <= 5){
+                alert('Password를 6자 이상 입력하세요.')
+                e.preventDefault()
+            } else {
+                alert('Login Success !')
+            }
+        })
+
+        // function(e){} ==> e : event 객체
+        // e.preventDefault() : 폼 전송 방지
+        // === : 엄격한 비교(타입까지 검증 O)
+        // == : 느슨한 비교(타입까지 검증 X)
+
+        // 값이 바뀔 떄 입력값 받기
+        // document.getElementById('uid').addEventListener('input', function(){})
+        // var : 재선언 가능, 재할당 가능, 범위 function
+        // let : 재선언 불가, 재할당 가능, 범위 {}
+        //      [재할당 예시]
+        //      let sample = 1;
+        //      sample = 2;
+        // const : 재선언 불가, 재할당 불가, 범위 {}
+    </script>    
+  </body>
+</html>
