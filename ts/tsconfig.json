@@ -4,8 +4,8 @@
         "module": "ES6",
         "noImplicitAny": true, // any 타입 발생 시 에러 설정
         "strictNullChecks": true, // null, undefined 타입 조작 시 에러 발생
-        "noUnusedParameters": true,
-        "noUnusedLocals": true
+        "noUnusedParameters": false,
+        "noUnusedLocals": false
     }
 }
 
