@@ -4,7 +4,7 @@ type Sample = string | number;
 
 let lastName :string = 'kim';
 let nameArray :string[] = ['kim', 'park'] // array type
-let nameObject : { name? : string } = { name : 'kim'} // Object type
+let nameObject : { name?: string } = { name : 'kim'} // Object type
 
 let stringOrNumber : Sample = 123; // Union type
 
