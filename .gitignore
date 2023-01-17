@@ -1,0 +1,35 @@
+# compiled output
+/nestjs/first-step/dist
+/nestjs/first-step/node_modules
+
+# Logs
+/nestjs/first-step/logs
+/nestjs/first-step/*.log
+/nestjs/first-step/npm-debug.log*
+/nestjs/first-step/pnpm-debug.log*
+/nestjs/first-step/yarn-debug.log*
+/nestjs/first-step/yarn-error.log*
+/nestjs/first-step/lerna-debug.log*
+
+# OS
+.DS_Store
+
+# Tests
+/nestjs/first-step/coverage
+/nestjs/first-step/.nyc_output
+
+# IDEs and editors
+/nestjs/first-step/.idea
+/nestjs/first-step/.project
+/nestjs/first-step/.classpath
+/nestjs/first-step/.c9/
+/nestjs/first-step/*.launch
+/nestjs/first-step/.settings/
+/nestjs/first-step/*.sublime-workspace
+
+# IDE - VSCode
+/nestjs/first-step/.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
