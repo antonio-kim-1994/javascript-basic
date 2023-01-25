@@ -2,6 +2,7 @@ import { CreateMovieDto } from './dto/create-movie.dto';
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Query } from '@nestjs/common';
 import { Movie } from './entities/movie.entity';
 import { MoviesService } from './movies.service';
+import { UpdateMovieDto } from './dto/update-movie.dto';
 
 // Single-responsibility principle: 하나의 module, class 혹은 function이 하나의 기능은 꼭 책임진다.
 
@@ -30,7 +31,7 @@ export class MoviesController {
     }
 
     @Patch('/:id')
-    patch(@Param('id') movieId:number, @Body() updateData){
+    patch(@Param('id') movieId:number, @Body() updateData: UpdateMovieDto){
         return this.moviesService.update(movieId, updateData);
         // return {
         //     updatedMovie: movieId,
